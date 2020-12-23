@@ -1,0 +1,178 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --vermelho: #E50914;
+    --preto: #141414;
+}
+
+/*elementos-base*/
+body{
+    background-color: var(--preto);
+    font-family: 'Arial', Times, serif;
+    color: white;
+}
+
+header .container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo{
+    color: var(--vermelho);
+    font-family: 'Bebas Neue', 'Arial black';
+    font-size: 60px;
+    letter-spacing: 3px;
+}
+
+header nav a{
+    text-decoration: none;
+    color: #AAA;
+    margin-right: 10px;
+}
+
+/*Mudar de cor ao passar cursor*/
+header nav a:hover{
+    color: #fff;
+}
+
+/*fime principal*/
+.filme-principal{
+    font-size: 16px;
+    background: linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)100%) , url('/img/capa.jpg');
+    
+    height: 400px;
+    background-size:cover;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.filme-principal .descricao{
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.filme-principal .titulo{
+    margin-top: 15%;
+    font-size:40px;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+.botao{
+    background-color: rgba(0,0,0,.40);
+    border: none;
+    color: white;
+
+    padding: 15px 30px;
+    margin-right: 15px;
+    font-size: 12px;
+
+    cursor: pointer; /*Mudar cursor ao passa-lo*/
+    transition: .3s ease all; /*transição de 3 segundos tipo ease all*/
+}
+
+.botao:hover{
+    background-color:white;
+    color:black;
+}
+
+.botao i{
+    margin-right: 8px;
+}
+
+.container{
+    margin-left: 20px;
+}
+
+.filme-principal .container{
+    width: 70%;
+}
+
+.box-filme{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.modal-container{
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,.80);
+    position: fixed;
+    top: 0px;
+    left:0px;
+    z-index: 2000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal{
+    background: var(--preto); 
+    color:white;
+    width: 60%;
+    min-width: 300px;
+    position: relative;
+}
+
+.modal-titulo{
+    padding: 10px;
+    margin-left: 25px;
+}
+.modal-descricao{
+    background: black;
+    text-align: justify;
+    padding: 40px;
+}
+
+.carrosel-filmes{
+    margin-top: 5px;
+}
+
+.fechar{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 4px solid black;
+    background: black;
+    color: white;
+    font-family: "PT Mono", monospace;
+    font-size: 18px;
+    cursor: pointer;
+    transition: .3s ease all; /*transição de 3 segundos tipo ease all*/
+}
+
+.fechar:hover{
+    background-color:white;
+    color:black;
+}
+
+.modal-container.mostrar{
+    display:flex;
+}
+
+@keyframes modal{
+    from{
+        opacity: 0;
+        transform: translate3d(0. -60px, 0);
+    }
+    to{
+        opacity: 1;
+        transform: translate3d(0. 0, 0);
+    }
+}
+
+.mostrar .modal{
+    animation: modal .3s;
+}
