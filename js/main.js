@@ -13,7 +13,7 @@ logo.addEventListener('click' , () => inicialModal('modal-popup'));
 
 //https://www.youtube.com/watch?v=fu-enUG2VEE
 
-
+ 
 function redirecionarTrailer(){
     window.location.href = "https://www.youtube.com/watch?v=2-W6_6gJda0";
 }
